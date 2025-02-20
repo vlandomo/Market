@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Market</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <h1>Market</h1>
+      <nav>
+        <a href="#">Input</a>
+        <a href="#">Show Data</a>
+      </nav>
+    </header>
+    <main>
+      <!-- input section -->
+      <section class="inputData">
+        <h2>Input Data</h2>
+        <input type="text" id="title" placeholder="Prodact Name" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="Price"
+          />
+          <input type="number" id="count" placeholder="Count" />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="taxes"
+            placeholder="Taxes"
+          />
+
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="ads"
+            placeholder="ADS"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discount"
+            placeholder="Discount"
+          />
+
+          <input type="text" id="category" placeholder="Category" />
+          <small id="total"></small>
+        </div>
+        <button id="submit">Create</button>
+      </section>
+      <!-- show data section -->
+      <section class="outputData">
+        <div class="searchBlock">
+          <h2>Search</h2>
+          <div class="search_btn">
+              <input
+                onkeyup="searchData(this.value)"
+                type="text"
+                id="search"
+                placeholder="Search By Name"
+              />
+            <select id="searchMode" onchange = "getSearchMood(this.value)">
+              <option value="searchTitle">Search By Name</option>
+              <option value="searchCategory">Search By Category</option>
+            </select>
+          </div>
+        </div>
+        <!-- delete all -->
+        <div id="deleteAll"></div>
+        <!-- table -->
+        <table>
+          <tr>
+            <th>id</th>
+            <th>prodacte Name</th>
+            <th>price</th>
+            <th>count</th>
+            <th>taxes</th>
+            <th>abs</th>
+            <th>discount</th>
+            <th>category</th>
+            <th>total</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
+</html>

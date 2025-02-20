@@ -1,0 +1,182 @@
+* {
+  font-family: Arial, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+*:focus {
+  outline: none;
+}
+:root {
+  --header_clr: #fff;
+  --main_title_clr: #000;
+  --socand_clr: #547d83;
+  --focus_clr: #385458;
+}
+body {
+  background-color: #dbd9d9;
+}
+/* input */
+input {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border: none;
+  background-color: var(--socand_clr);
+  margin: 2px 0;
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--header_clr);
+  transition: 0.2s;
+}
+input:focus {
+  background-color: var(--focus_clr);
+}
+input::placeholder {
+  color: var(--header_clr);
+}
+/* button */
+button {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--focus_clr);
+  color: var(--header_clr);
+  transition: 0.5s;
+}
+button:hover {
+  background-color: var(--socand_clr);
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--header_clr);
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--main_title_clr);
+}
+/***** header *****/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--socand_clr);
+  padding: 5px 15px;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--header_clr);
+}
+/***** main *****/
+main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding: 0 15px;
+  gap: 10px;
+}
+/*** input section ***/
+main .inputData {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* price */
+main .inputData .price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .inputData .price #total {
+  background-color: red;
+  border-radius: 5px;
+  padding: 7px;
+  color: var(--header_clr);
+}
+main .inputData .price #total::before {
+  content: "Total:";
+}
+/*** output section ***/
+main .outputData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+main .outputData .searchBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+main .outputData .search_btn {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+
+select {
+  appearance: none; /* إخفاء التصميم الافتراضي */
+  -webkit-appearance: none; /* دعم لمتصفح Safari */
+  -moz-appearance: none; /* دعم لمتصفح Firefox */
+  background-color: var(--socand_clr);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--header_clr);
+  cursor: pointer;
+  width: 200px;
+}
+
+/* إضافة أيقونة سهم مخصصة */
+select {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="gray"><path d="M5.5 7l4.5 4.5L14.5 7" /></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+  padding-right: 30px; /* حتى لا تتداخل الأيقونة مع النص */
+}
+
+/* table */
+main .outputData table {
+    width: 100%;
+    text-align: center;
+}
+main .outputData table th {
+    text-transform: uppercase;
+}
+main .outputData table th,td {
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
