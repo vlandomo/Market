@@ -95,7 +95,7 @@ header nav a {
 main {
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 50px;
   padding: 0 15px;
   gap: 10px;
 }
@@ -116,8 +116,10 @@ main .inputData .price #total {
   background-color: red;
   border-radius: 15px;
   padding: 10px;
+  width: 100%;
   color: var(--header_clr);
 }
+
 main .inputData .price #total::before {
   content: "Total:";
 }
@@ -162,6 +164,9 @@ main .outputData .data_table {
   display: flex;
   overflow-x: scroll;
 }
+main .outputData .data_table::-webkit-scrollbar {
+  overflow: hidden;
+}
 main .outputData .data_table table {
   width: 100%;
   text-align: center;
@@ -177,6 +182,9 @@ td {
 
 /* sizing */
 @media (max-width: 600px) {
+  main {
+    text-align: center;
+  }
   main .inputData .price {
     display: flex;
     flex-direction: column;
