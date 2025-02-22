@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Market</title>
   </head>
   <body>
     <!-- header -->
     <header>
-      <h1>Market</h1>
+      <h1 id="Market">Market</h1>
       <nav>
-        <a href="#inputData">Input</a>
-        <a href="#outputData">Show Data</a>
+        <a href="settings.html"><i class="fa-solid fa-gear"></i></a>
+        <button onclick="toggleLanguage()">Lan</button>
       </nav>
     </header>
     <main>
       <!-- input section -->
       <section class="inputData" id="inputData">
-        <h2>Input Data</h2>
+        <h2 id="Input_Data">Input Data</h2>
         <input type="text" id="title" placeholder="Prodact Name" />
         <div class="price">
           <input
@@ -49,14 +53,14 @@
           />
 
           <input type="text" id="category" placeholder="Category" />
-          <small id="total"></small>
+          <small id="total" data-lang="total"></small>
         </div>
         <button id="submit">Create</button>
       </section>
       <!-- show data section -->
       <section class="outputData" id="outputData">
         <div class="searchBlock">
-          <h2>Search</h2>
+          <h2 id="searchTitleh2">Search</h2>
           <div class="search_btn">
             <input
               onkeyup="searchData(this.value)"
@@ -71,29 +75,31 @@
           </div>
         </div>
         <!-- delete all -->
-        <div id="deleteAll"></div>
+        <div class="delete_section">
+          <div id="deleteAllDataTable"></div>
+          <div id="proNamber"></div>
+        </div>
         <!-- table -->
         <div class="data_table">
           <table>
             <tr>
-              <th>id</th>
-              <th>product</th>
-              <th>price</th>
-              <th>count</th>
-              <th>taxes</th>
-              <th>abs</th>
-              <th>discount</th>
-              <th>category</th>
-              <th>total</th>
-              <th>update</th>
-              <th>delete</th>
+              <th>#</th>
+              <th id="prodacteTitle">Prodacte</th>
+              <th id="priceTitle">Price</th>
+              <th id="countTitle">count</th>
+              <th id="taxesTitle">taxes</th>
+              <th id="absTitle">abs</th>
+              <th id="discountTitle">discount</th>
+              <th id="categoryTitle">category</th>
+              <th id="totalTitle">total</th>
+              <th id="updateTitle">update</th>
+              <th id="deleteTitle">delete</th>
             </tr>
             <tbody id="tbody"></tbody>
           </table>
         </div>
       </section>
     </main>
-
     <!-- script -->
     <script src="script.js"></script>
   </body>
