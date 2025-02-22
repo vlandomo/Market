@@ -13,7 +13,7 @@ let tmp; // متغير لتخزين الفهرس عند التعديل
 // دالة حساب الإجمالي
 function getTotal() {
   if (price.value !== "") {
-    let result = (+price.value + +taxes.value + +ads.value) - +discount.value;
+    let result = +price.value + +taxes.value + +ads.value - +discount.value;
     total.innerHTML = result;
     total.style.background = "green";
   } else {
@@ -43,7 +43,10 @@ submit.onclick = function () {
   if (title.value && price.value && category.value) {
     if (mode === "create") {
       dataPro.push(newPro);
+      alert("The product has been added successfully");
     } else {
+      alert("The product has been updated successfully");
+
       dataPro[tmp] = newPro;
       mode = "create";
       submit.innerHTML = "Create";
@@ -137,7 +140,7 @@ function updateData(i) {
   search.value = "";
 }
 
-// البحث
+// search
 let searchMode = "title";
 
 function getSearchMood(value) {
@@ -165,7 +168,7 @@ function searchData(value) {
               <td>${dataPro[i].title}</td>
               <td>${dataPro[i].price}</td>
               <td>${dataPro[i].count || 1}</td>
-              <td>${dataPro[i].taxes|| 0}</td>
+              <td>${dataPro[i].taxes || 0}</td>
               <td>${dataPro[i].ads || 0}</td>
               <td>${dataPro[i].discount || 0}</td>
               <td>${dataPro[i].category}</td>
@@ -199,3 +202,17 @@ function searchData(value) {
   }
   document.getElementById("tbody").innerHTML = table;
 }
+
+// scroll
+document.querySelectorAll("nav a").forEach((anchor) => {
+  anchor.addEventListener("click", function (event) {
+    event.preventDefault(); // منع التنقل الفوري
+    const targetId = this.getAttribute("href"); // جلب ID القسم المستهدف
+    const targetElement = document.querySelector(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop - 50, // تعويض ارتفاع الـ nav
+      behavior: "smooth", // التمرير السلس
+    });
+  });
+});
