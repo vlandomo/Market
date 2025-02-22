@@ -63,11 +63,7 @@ h2 {
   font-weight: 600;
   color: var(--main_title_clr);
 }
-hr {
-  border: none;
-  height: 2px;
-  background-color: #000;
-}
+
 /***** header *****/
 header {
   display: flex;
@@ -78,7 +74,7 @@ header {
   left: 0;
   width: 100%;
   background-color: var(--socand_clr);
-  padding: 5px 15px;
+  padding: 10px 15px;
 }
 
 header nav {
@@ -95,7 +91,7 @@ header nav a {
 main {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 0 15px;
   gap: 10px;
 }
