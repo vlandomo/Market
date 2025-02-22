@@ -23,12 +23,12 @@ body {
 /* input */
 input {
   width: 100%;
-  height: 30px;
+  padding: 10px;
   outline: none;
   border: none;
   background-color: var(--socand_clr);
   margin: 2px 0;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px;
   color: var(--header_clr);
   transition: 0.2s;
@@ -42,7 +42,7 @@ input::placeholder {
 /* button */
 button {
   width: 100%;
-  height: 30px;
+  padding: 10px;
   border: none;
   border-radius: 15px;
   background-color: var(--focus_clr);
@@ -62,6 +62,11 @@ h2 {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--main_title_clr);
+}
+hr {
+  border: none;
+  height: 2px;
+  background-color: #000;
 }
 /***** header *****/
 header {
@@ -90,7 +95,7 @@ header nav a {
 main {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 0 15px;
   gap: 10px;
 }
@@ -109,8 +114,8 @@ main .inputData .price {
 }
 main .inputData .price #total {
   background-color: red;
-  border-radius: 5px;
-  padding: 7px;
+  border-radius: 15px;
+  padding: 10px;
   color: var(--header_clr);
 }
 main .inputData .price #total::before {
@@ -118,22 +123,21 @@ main .inputData .price #total::before {
 }
 /*** output section ***/
 main .outputData {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
 }
 main .outputData .searchBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 main .outputData .search_btn {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
-
-
 
 select {
   appearance: none; /* إخفاء التصميم الافتراضي */
@@ -141,15 +145,11 @@ select {
   -moz-appearance: none; /* دعم لمتصفح Firefox */
   background-color: var(--socand_clr);
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 10px;
   color: var(--header_clr);
   cursor: pointer;
   width: 200px;
-}
-
-/* إضافة أيقونة سهم مخصصة */
-select {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="gray"><path d="M5.5 7l4.5 4.5L14.5 7" /></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -158,25 +158,38 @@ select {
 }
 
 /* table */
-main .outputData table {
+main .outputData .data_table {
+  display: flex;
+  overflow-x: scroll;
+}
+main .outputData .data_table table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+main .outputData .data_table table th {
+  text-transform: uppercase;
+}
+main .outputData .data_table table th,
+td {
+  padding: 5px;
+}
+
+/* sizing */
+@media (max-width: 600px) {
+  main .inputData .price {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     width: 100%;
-    text-align: center;
+    gap: 5px;
+  }
+  main .outputData .search_btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  select {
+    width: 100%;
+  }
 }
-main .outputData table th {
-    text-transform: uppercase;
-}
-main .outputData table th,td {
-    padding: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
