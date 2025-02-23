@@ -98,6 +98,7 @@ main {
   margin-top: 50px;
   padding: 0 15px;
   gap: 10px;
+  text-align: center;
 }
 /*** input section ***/
 main .inputData {
@@ -168,11 +169,11 @@ select {
   color: var(--header_clr);
   cursor: pointer;
   width: 200px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="gray"><path d="M5.5 7l4.5 4.5L14.5 7" /></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path d="M5.5 7l4.5 4.5L14.5 7" /></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 15px;
-  padding-right: 30px; /* حتى لا تتداخل الأيقونة مع النص */
+  text-align: center;
 }
 
 /* table */
